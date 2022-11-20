@@ -34,10 +34,18 @@ typedef unsigned char bool_t;
 #include        <sys/socket.h>
 #include        <sys/un.h>
 #include        <sys/resource.h>
-#define PORTMAP
-#include	<rpc/rpc.h>
+//#define PORTMAP
+//#include	<rpc/rpc.h>
 #endif
-#include	<rpc/types.h>
+//#include	<rpc/types.h>
+#ifndef S_IREAD
+#define S_IREAD S_IRUSR
+#endif
+
+#ifndef S_IWRITE
+#define S_IWRITE S_IWUSR
+#endif
+
 
 #include 	<stdarg.h>
 #ifndef HAVE_uint

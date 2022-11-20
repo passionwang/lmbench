@@ -91,7 +91,7 @@ handle_scheduler(int childno, int benchproc, int nbenchprocs)
 			     childno * (nbenchprocs + 1) + benchproc);
 	} else {
 		/* default action: do nothing */
-		return;
+		return -1;
 	}
 
 	return sched_pin(cpu % sched_ncpus());

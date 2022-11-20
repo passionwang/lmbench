@@ -81,9 +81,9 @@ main(int ac, char **av)
 	 */
 	signal(SIGPIPE, SIG_IGN);
 	data = tcp_server(prog, SOCKOPT_REUSE);
-	bufs[0] = valloc(XFERSIZE);
-	bufs[1] = valloc(XFERSIZE);
-	bufs[2] = valloc(XFERSIZE);
+	bufs[0] = malloc(XFERSIZE);
+	bufs[1] = malloc(XFERSIZE);
+	bufs[2] = malloc(XFERSIZE);
 	logfile = open(LOGFILE, O_CREAT|O_APPEND|O_WRONLY, 0666);
 	signal(SIGINT, die);
 	signal(SIGHUP, die);
